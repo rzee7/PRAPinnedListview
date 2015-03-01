@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRAPinnedListView", "PRAPinnedListView\PRAPinnedListView.csproj", "{9AFFC020-42F9-4604-823A-620FE9D133ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRAPinnedListView.Droid", "PRAPinnedListView.Droid\PRAPinnedListView.Droid.csproj", "{CE85CC10-F01D-4402-BC36-D3E9BDD558D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AFFC020-42F9-4604-823A-620FE9D133ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AFFC020-42F9-4604-823A-620FE9D133ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AFFC020-42F9-4604-823A-620FE9D133ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AFFC020-42F9-4604-823A-620FE9D133ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE85CC10-F01D-4402-BC36-D3E9BDD558D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE85CC10-F01D-4402-BC36-D3E9BDD558D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE85CC10-F01D-4402-BC36-D3E9BDD558D3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CE85CC10-F01D-4402-BC36-D3E9BDD558D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE85CC10-F01D-4402-BC36-D3E9BDD558D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE85CC10-F01D-4402-BC36-D3E9BDD558D3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
