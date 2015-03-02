@@ -78,10 +78,10 @@
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\menu\MenuItem.xml" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\menu\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PRAPinnedListView\PRAPinnedListView.csproj">
       <Project>{9affc020-42f9-4604-823a-620fe9d133ed}</Project>

@@ -2,6 +2,7 @@ using Android.Content;
 using Android.Database;
 using Android.Graphics;
 using Android.Graphics.Drawables;
+using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
@@ -43,15 +44,20 @@ namespace PRAPinnedListView
 
         #region Constructor
 
-        public PRAListView(Context _context)
-            : base(_context)
+        public PRAListView(Context context)
+            : base(context)
         {
-            mDataSetObserver = new PRADataSetObserver(RecreatePinnedShadow, null);
+            InitView();
         }
-
+        public PRAListView(IntPtr a, JniHandleOwnership b)
+            : base(a, b)
+        {
+            InitView();
+        }
         public PRAListView(Context context, IAttributeSet attrs) :
             base(context, attrs)
         {
+           
             InitView();
         }
 
@@ -61,15 +67,32 @@ namespace PRAPinnedListView
             InitView();
         }
 
+
         #endregion
 
         #region Init View
 
         private void InitView()
         {
+            mDataSetObserver = new PRADataSetObserver(RecreatePinnedShadow, null);
+            //
             SetOnScrollListener(this);
             mTouchSlop = ViewConfiguration.Get(Context).ScaledTouchSlop;
             InitShadow(true);
+        }
+
+        #endregion
+
+        #region Set Shadow Visible
+
+        public void SetShadowVisible(bool visible)
+        {
+            InitShadow(visible);
+            if (mPinnedSection != null)
+            {
+                View v = mPinnedSection.ViewHolder;
+                Invalidate(v.Left, v.Top, v.Right, v.Bottom + mShadowHeight);
+            }
         }
 
         #endregion
@@ -630,12 +653,6 @@ namespace PRAPinnedListView
     {
         bool IsItemViewTypePinned(int viewType);
     }
-
-    //public class PRAListAdapter : BaseAdapter
-    //{
-
-       
-    //}
 
     public class PinnedSection
     {
