@@ -57,7 +57,6 @@ namespace PRAPinnedListView
         public PRAListView(Context context, IAttributeSet attrs) :
             base(context, attrs)
         {
-           
             InitView();
         }
 
@@ -616,6 +615,8 @@ namespace PRAPinnedListView
         #endregion
     }
 
+    public class MyGestureDetector : GestureDetector.SimpleOnGestureListener
+    { }
     public class RunnableHolder : Java.Lang.Object, IRunnable
     {
         private readonly Action _Run;

@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PRAPinnedListView.cs" />
+    <Compile Include="Adapter\PRAPinnedAdapter.cs" />
+    <Compile Include="Control\PRAPinnedListView.cs" />
+    <Compile Include="Data\DataHandler.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

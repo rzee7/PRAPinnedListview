@@ -207,29 +207,29 @@ namespace PRAPinnedListView.Droid
 
             if (clear) Clear();
 
-            int sectionsNumber = to - from + 1;
-            prepareSections(sectionsNumber);
+                int sectionsNumber = to - from + 1; // 26 - 1 + 1 = 26
+                prepareSections(sectionsNumber);
 
-            int sectionPosition = 0, listPosition = 0;
-            for (int i = 0; i < sectionsNumber; i++)
-            {
-                ItemHolder section = new ItemHolder(ItemHolder.SECTION, string.Format("A", i));
-                section.SectionPosition = sectionPosition;
-                section.ListPosition = listPosition++;
-                onSectionAdded(section, sectionPosition);
-                Add(section);
-
-                int itemsNumber = (int)Math.Abs((Math.Cos(2f * Math.PI / 3f * sectionsNumber / (i + 1f)) * 25f));
-                for (int j = 0; j < itemsNumber; j++)
+                int sectionPosition = 0, listPosition = 0;
+                for (int i = 0; i < sectionsNumber; i++)
                 {
-                    ItemHolder item = new ItemHolder(ItemHolder.ITEM, section.Text.ToUpper(new CultureInfo("en-US")) + " - " + j);
-                    item.SectionPosition = sectionPosition;
-                    item.ListPosition = listPosition++;
-                    Add(item);
-                }
+                    ItemHolder section = new ItemHolder(ItemHolder.SECTION, string.Format("A", i));
+                    section.SectionPosition = sectionPosition;
+                    section.ListPosition = listPosition++;
+                    onSectionAdded(section, sectionPosition);
+                    Add(section);
 
-                sectionPosition++;
-            }
+                    int itemsNumber = (int)Math.Abs((Math.Cos(2f * Math.PI / 3f * sectionsNumber / (i + 1f)) * 25f));
+                    for (int j = 0; j < itemsNumber; j++)
+                    {
+                        ItemHolder item = new ItemHolder(ItemHolder.ITEM, section.Text.ToUpper(new CultureInfo("en-US")) + " - " + j);
+                        item.SectionPosition = sectionPosition;
+                        item.ListPosition = listPosition++;
+                        Add(item);
+                    }
+                    sectionPosition++;
+
+                }
         }
 
         #endregion
