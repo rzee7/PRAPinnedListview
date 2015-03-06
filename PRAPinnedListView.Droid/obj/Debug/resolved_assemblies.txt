@@ -1,4 +1,0 @@
-D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView.Droid\bin\Debug\PRAPinnedListView.Droid.dll
-D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\bin\Debug\PRAPinnedListView.dll
-D:\Xamarin\Examples\MONO\ActionBarCompat\bin\Debug\Xamarin.Android.Support.v4.dll
-D:\Xamarin\Examples\MONO\ActionBarCompat\bin\Debug\Xamarin.Android.Support.v7.AppCompat.dll
