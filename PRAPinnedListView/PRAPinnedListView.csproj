@@ -45,7 +45,15 @@
   <ItemGroup>
     <Compile Include="Adapter\PRAPinnedAdapter.cs" />
     <Compile Include="Control\PRAPinnedListView.cs" />
-    <Compile Include="Data\DataHandler.cs" />
+    <Compile Include="Helper\PRAListItemClickEventArg.cs" />
+    <Compile Include="Helper\ObjectCast.cs" />
+    <Compile Include="Helper\PinnedSection.cs" />
+    <Compile Include="Helper\PRADataSetObserver.cs" />
+    <Compile Include="Helper\PRAService.cs" />
+    <Compile Include="Helper\RunnableHolder.cs" />
+    <Compile Include="Interface\IHeaderModel.cs" />
+    <Compile Include="Interface\IListItemView.cs" />
+    <Compile Include="Interface\IPinnedSectionListAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

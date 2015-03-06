@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout1"
+        android:background="@color/red_light">
+        <ImageView
+            android:src="@drawable/praIcon"
+            android:layout_width="wrap_content"
+            android:id="@+id/imgView"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:visibility="visible" />
+        <TextView
+            android:text="Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtItemTitle"
+            android:padding="2dp"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            android:layout_toRightOf="@+id/imgView"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

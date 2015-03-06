@@ -788,6 +788,9 @@ namespace PRAPinnedListView.Droid
 			// aapt resource value: 0x7f020057
 			public const int Icon = 2130837591;
 			
+			// aapt resource value: 0x7f020058
+			public const int praIcon = 2130837592;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -800,9 +803,6 @@ namespace PRAPinnedListView.Droid
 		
 		public partial class Id
 		{
-			
-			// aapt resource value: 0x7f050045
-			public const int action_addpadding = 2131034181;
 			
 			// aapt resource value: 0x7f05001a
 			public const int action_bar = 2131034138;
@@ -828,9 +828,6 @@ namespace PRAPinnedListView.Droid
 			// aapt resource value: 0x7f05001b
 			public const int action_context_bar = 2131034139;
 			
-			// aapt resource value: 0x7f050044
-			public const int action_fastscroll = 2131034180;
-			
 			// aapt resource value: 0x7f050016
 			public const int action_menu_divider = 2131034134;
 			
@@ -845,15 +842,6 @@ namespace PRAPinnedListView.Droid
 			
 			// aapt resource value: 0x7f050022
 			public const int action_mode_close_button = 2131034146;
-			
-			// aapt resource value: 0x7f050047
-			public const int action_showHeaderAndFooter = 2131034183;
-			
-			// aapt resource value: 0x7f050046
-			public const int action_showShadow = 2131034182;
-			
-			// aapt resource value: 0x7f050048
-			public const int action_updateDataset = 2131034184;
 			
 			// aapt resource value: 0x7f050023
 			public const int activity_chooser_view_content = 2131034147;
@@ -909,11 +897,14 @@ namespace PRAPinnedListView.Droid
 			// aapt resource value: 0x7f050025
 			public const int image = 2131034149;
 			
+			// aapt resource value: 0x7f050043
+			public const int imgView = 2131034179;
+			
 			// aapt resource value: 0x7f050031
 			public const int left_icon = 2131034161;
 			
-			// aapt resource value: 0x7f050043
-			public const int list = 2131034179;
+			// aapt resource value: 0x7f050047
+			public const int list = 2131034183;
 			
 			// aapt resource value: 0x7f050001
 			public const int listMode = 2131034113;
@@ -933,8 +924,8 @@ namespace PRAPinnedListView.Droid
 			// aapt resource value: 0x7f050000
 			public const int normal = 2131034112;
 			
-			// aapt resource value: 0x7f050042
-			public const int parent = 2131034178;
+			// aapt resource value: 0x7f050046
+			public const int parent = 2131034182;
 			
 			// aapt resource value: 0x7f050034
 			public const int progress_circular = 2131034164;
@@ -944,6 +935,9 @@ namespace PRAPinnedListView.Droid
 			
 			// aapt resource value: 0x7f05002d
 			public const int radio = 2131034157;
+			
+			// aapt resource value: 0x7f050042
+			public const int relativeLayout1 = 2131034178;
 			
 			// aapt resource value: 0x7f050032
 			public const int right_container = 2131034162;
@@ -1010,6 +1004,12 @@ namespace PRAPinnedListView.Droid
 			
 			// aapt resource value: 0x7f05001e
 			public const int top_action_bar = 2131034142;
+			
+			// aapt resource value: 0x7f050045
+			public const int txtItemTitle = 2131034181;
+			
+			// aapt resource value: 0x7f050044
+			public const int txtTitle = 2131034180;
 			
 			// aapt resource value: 0x7f05001f
 			public const int up = 2131034143;
@@ -1122,10 +1122,16 @@ namespace PRAPinnedListView.Droid
 			public const int abc_search_view = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int Main = 2130903064;
+			public const int HeaderView = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int support_simple_spinner_dropdown_item = 2130903065;
+			public const int ItemView = 2130903065;
+			
+			// aapt resource value: 0x7f03001a
+			public const int Main = 2130903066;
+			
+			// aapt resource value: 0x7f03001b
+			public const int support_simple_spinner_dropdown_item = 2130903067;
 			
 			static Layout()
 			{
@@ -1133,22 +1139,6 @@ namespace PRAPinnedListView.Droid
 			}
 			
 			private Layout()
-			{
-			}
-		}
-		
-		public partial class Menu
-		{
-			
-			// aapt resource value: 0x7f0c0000
-			public const int MenuItem = 2131492864;
-			
-			static Menu()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Menu()
 			{
 			}
 		}
@@ -1200,24 +1190,6 @@ namespace PRAPinnedListView.Droid
 			
 			// aapt resource value: 0x7f0a000b
 			public const int abc_shareactionprovider_share_with_application = 2131361803;
-			
-			// aapt resource value: 0x7f0a0011
-			public const int action_addpadding = 2131361809;
-			
-			// aapt resource value: 0x7f0a0010
-			public const int action_fastscroll = 2131361808;
-			
-			// aapt resource value: 0x7f0a0013
-			public const int action_showHeaderAndFooter = 2131361811;
-			
-			// aapt resource value: 0x7f0a0012
-			public const int action_showShadow = 2131361810;
-			
-			// aapt resource value: 0x7f0a0014
-			public const int action_updateDataset = 2131361812;
-			
-			// aapt resource value: 0x7f0a000f
-			public const int app_name = 2131361807;
 			
 			static String()
 			{

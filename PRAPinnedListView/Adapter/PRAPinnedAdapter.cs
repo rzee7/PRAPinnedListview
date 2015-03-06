@@ -12,21 +12,19 @@ using Android.Widget;
 
 namespace PRAPinnedListView
 {
-    class PRAPinnedAdapter<T> : BaseAdapter<T>, IPinnedSectionListAdapter, ISectionIndexer
+    internal class PRAPinnedAdapter<T> : BaseAdapter<T>, IPinnedSectionListAdapter, ISectionIndexer where T : IHeaderModel
     {
         #region Private Declarations
 
-        private List<ItemHolder> dataItem;
-        private Activity context;
+        private T[] PRAdataItem;
 
         #endregion
 
         #region Adapter Constructor
 
-        public PRAPinnedAdapter(Activity _context, List<ItemHolder> _dataItems)
+        public PRAPinnedAdapter(IEnumerable<T> _dataItems)
         {
-            context = _context;
-            dataItem = _dataItems;
+            PRAdataItem = _dataItems.ToArray();
         }
 
         #endregion
@@ -44,12 +42,12 @@ namespace PRAPinnedListView
 
         public int GetPositionForSection(int sectionIndex)
         {
-            int sectionCount=dataItem.Count(x => x.IsSection == true);
+            int sectionCount = PRAdataItem.Count(x => x.IsSection == true);
             if (sectionIndex >= sectionCount)
             {
                 sectionIndex = sectionCount - 1;
             }
-            return dataItem.Where(x => x.IsSection == true).ToList()[sectionIndex].ListPosition;
+            return PRAdataItem.Where(x => x.IsSection == true).ToList()[sectionIndex].ListPosition;
         }
 
         public int GetSectionForPosition(int position)
@@ -80,23 +78,19 @@ namespace PRAPinnedListView
 
         #endregion
 
-        #region No Method
+        #region Get Item Method
         public override T this[int position]
         {
-            get { throw new NotImplementedException(); }
+            get { return GetItem(position); }
         }
 
-        public override T this[int position]
-        {
-            get { throw new NotImplementedException(); }
-        }
         #endregion
 
         #region Items Count
 
         public override int Count
         {
-            get { return dataItem.Count; }
+            get { return PRAdataItem.Length; }
         }
 
         #endregion
@@ -112,9 +106,9 @@ namespace PRAPinnedListView
 
         #region Get Item
 
-        public ItemHolder GetItem(int position)
+        public new T GetItem(int position)
         {
-            return dataItem[position]; //TODO : Need to be set generic
+            return PRAdataItem[position]; 
         }
 
         #endregion
@@ -123,22 +117,14 @@ namespace PRAPinnedListView
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            ItemHolder item = GetItem(position);
-            View view = convertView;
-            if (view == null)
-                view = null; //LayoutInflater.Inflate(Resource.Layout.ListItem, parent, false);
-
+            View view = null;
             switch (GetItemViewType(position))
             {
                 case 0:
-                    view = null;// context.LayoutInflater.Inflate(Resource.Layout.ItemView, parent, false); //Item view
-                    view.FindViewById<ImageView>(0/*ImageView ID*/).SetBackgroundResource(0/*Image ID*/);
-                    view.FindViewById<TextView>(0/*TextView ID*/).Text = string.Empty;
+                    view = PRAService.Resolve<IListItemView<T>>().GetItemView(position, convertView, parent, PRAdataItem[position]);
                     break;
                 case 1:
-                    view = null;// context.LayoutInflater.Inflate(Resource.Layout.SectionView, parent, false); //Header view
-                    view.FindViewById<ImageView>(0/*ImageView ID*/).SetBackgroundResource(0/*Image ID*/);
-                    view.FindViewById<TextView>(0/*TextView ID*/).Text = string.Empty;
+                    view = PRAService.Resolve<IListItemView<T>>().GetItemHeaderView(position, convertView, parent, PRAdataItem[position]);
                     break;
                 default:
                     break;

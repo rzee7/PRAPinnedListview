@@ -1,0 +1,10 @@
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView.Droid\bin\Release\PRAPinnedListView.Droid.dll
+C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v5.0\Mono.Android.dll
+C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\mscorlib.dll
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\bin\Release\PRAPinnedListView.dll
+C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Core.dll
+C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.dll
+C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Xml.dll
+C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Xml.Linq.dll
+D:\Xamarin\Examples\MONO\ActionBarCompat\bin\Debug\Xamarin.Android.Support.v4.dll
+D:\Xamarin\Examples\MONO\ActionBarCompat\bin\Debug\Xamarin.Android.Support.v7.AppCompat.dll

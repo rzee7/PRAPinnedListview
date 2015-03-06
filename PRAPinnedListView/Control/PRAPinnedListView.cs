@@ -1,3 +1,4 @@
+using Android.App;
 using Android.Content;
 using Android.Database;
 using Android.Graphics;
@@ -8,6 +9,7 @@ using Android.Views;
 using Android.Widget;
 using Java.Lang;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +18,6 @@ namespace PRAPinnedListView
 {
     public class PRAListView : ListView, Android.Widget.AbsListView.IOnScrollListener
     {
-
         #region Private Fields
 
         // fields used for handling touch events
@@ -78,7 +79,20 @@ namespace PRAPinnedListView
             SetOnScrollListener(this);
             mTouchSlop = ViewConfiguration.Get(Context).ScaledTouchSlop;
             InitShadow(true);
+            ItemClick -= PRAListView_ItemClick;
+            ItemClick += PRAListView_ItemClick;
         }
+
+        void PRAListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            PRAItemClick(this, new PRAListItemClickEventArg<object>(e.Id, e.View, e.Parent, Adapter.GetItem(e.Position).CastBack()));
+        }
+
+        #endregion
+
+        #region PRA Event Click
+
+        public event EventHandler<PRAListItemClickEventArg<object>> PRAItemClick;
 
         #endregion
 
@@ -410,20 +424,28 @@ namespace PRAPinnedListView
 
         #endregion
 
+        #region Set Item Source
+
+        /// <summary>
+        /// Set list itemsource to adapter to binidng view.
+        /// </summary>
+        /// <typeparam name="T">Your modal type.</typeparam>
+        /// <param name="itemSource">Item collection.</param>
+        public void SetItemSource<T>(IEnumerable<T> itemSource) where T : IHeaderModel, new()
+        {
+            if (itemSource == null)
+                throw new NullReferenceException("Item source can not be null");
+            Adapter = new PRAPinnedAdapter<T>(itemSource);
+        }
+
+        #endregion
+
         #region Adapter Property
 
         public override IListAdapter Adapter
         {
             get
             {
-                if (Config.Debug && Adapter != null)
-                {
-                    if (!(Adapter.GetType().IsAssignableFrom(typeof(IPinnedSectionListAdapter))))
-                        throw new IllegalArgumentException("Does your adapter implement PinnedSectionListAdapter?");
-                    if (Adapter.ViewTypeCount < 2)
-                        throw new IllegalArgumentException("Does your adapter handle at least two types" +
-                                " of views in getViewTypeCount() method: items and sections?");
-                }
                 return base.Adapter;
             }
             set
@@ -613,55 +635,6 @@ namespace PRAPinnedListView
         }
 
         #endregion
-    }
-
-    public class MyGestureDetector : GestureDetector.SimpleOnGestureListener
-    { }
-    public class RunnableHolder : Java.Lang.Object, IRunnable
-    {
-        private readonly Action _Run;
-        public RunnableHolder(Action run)
-        {
-            _Run = run;
-        }
-
-        public void Run()
-        {
-            _Run();
-        }
-    }
-
-    public class PRADataSetObserver : DataSetObserver 
-    {
-        private readonly Action _OnChanged;
-        private readonly Action _OnIvalidated;
-        public PRADataSetObserver(Action OnChanged, Action OnInvalidate)
-        {
-            _OnChanged = OnChanged;
-            _OnIvalidated=OnInvalidate;
-        }
-        public override void OnChanged()
-        {
-            _OnChanged();
-        }
-        public override void OnInvalidated()
-        {
-            _OnIvalidated();
-        }
-    }
-
-    public interface IPinnedSectionListAdapter 
-    {
-        bool IsItemViewTypePinned(int viewType);
-    }
-
-    public class PinnedSection
-    {
-        public View ViewHolder { get; set; }
-        public int Position { get; set; }
-
-        //TODO : Make generic
-        public long ID { get; set; }
 
     }
 }

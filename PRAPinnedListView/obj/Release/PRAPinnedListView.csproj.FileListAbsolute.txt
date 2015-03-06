@@ -1,0 +1,10 @@
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\bin\Release\PRAPinnedListView.dll
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\bin\Release\PRAPinnedListView.pdb
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\bin\Release\PRAPinnedListView.PRAPinnedListView.apk
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\bin\Release\PRAPinnedListView.PRAPinnedListView-Signed.apk
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\obj\Release\PRAPinnedListView.dll
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\obj\Release\PRAPinnedListView.pdb
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\obj\Release\android\bin\PRAPinnedListView.PRAPinnedListView.apk
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\obj\Release\res\values\strings.xml
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\obj\Release\R.cs.flag
+D:\vDoers\RZEE\XSA\PRAPinnedListView\PRAPinnedListView\obj\Release\uploadflags.txt
