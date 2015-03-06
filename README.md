@@ -73,3 +73,4 @@ Yo!
 
 You have done your most time taken part here :) Now we just need to pass **Item Header View** and **Item View** these view will be customized as per your need :) Yeppeeeee!! we have done 
 
+This lib ported from [Pinned Section](https://github.com/beworker/pinned-section-listview "Sergej Shafarenka") Thanks! [Sergej Shafarenka](https://github.com/beworker)
